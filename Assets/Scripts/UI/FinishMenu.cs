@@ -1,4 +1,5 @@
-﻿using GameInformation;
+﻿using System;
+using GameInformation;
 using States;
 using TMPro;
 using UnityEngine;
@@ -11,7 +12,14 @@ namespace UI
 		[SerializeField] private Button _restartButton;
 		[SerializeField] private TextMeshProUGUI _survivedText;
 		[SerializeField] private TextMeshProUGUI _victoryText;
-		
+
+		private void OnValidate()
+		{
+			if (_restartButton == null) Debug.LogWarning("No restartButton set for " + name);
+			if (_survivedText == null) Debug.LogWarning("No survivedText set for " + name);
+			if (_victoryText == null) Debug.LogWarning("No victoryText set for " + name);
+		}
+
 		private void Start()
 		{
 			int wavesSurvived = GameManager.instance.waveCount; 

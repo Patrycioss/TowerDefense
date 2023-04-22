@@ -1,4 +1,5 @@
-﻿using Time;
+﻿using System;
+using Time;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,11 @@ namespace UI
 		private SimpleTimer _simpleTimer;
 
 		private GameObject _pickup;
+
+		private void OnValidate()
+		{
+			if (_pickupPrefab == null) Debug.LogWarning("No pickupPrefab set for " + name);
+		}
 
 		private void Start()
 		{

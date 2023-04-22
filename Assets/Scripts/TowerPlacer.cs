@@ -1,3 +1,4 @@
+using System;
 using GameInformation;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -16,6 +17,13 @@ public class TowerPlacer : MonoBehaviour
     private Camera _mainCamera;
     private Vector3Int _prevPos;
     private GameObject _prevTower;
+
+    private void OnValidate()
+    {
+        if (_towerContainer == null) Debug.LogWarning("No tower container set for " + name);
+        if (_grassMap == null) Debug.LogWarning("No grass map set for " + name);
+        if (_towerMap == null) Debug.LogWarning("No tower map set for " + name);
+    }
 
     public void GiveTower(Tower pTower)
     {

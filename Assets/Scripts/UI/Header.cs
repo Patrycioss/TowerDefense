@@ -1,4 +1,5 @@
-﻿using GameInformation;
+﻿using System;
+using GameInformation;
 using Time;
 using TMPro;
 using UnityEngine;
@@ -13,15 +14,15 @@ namespace UI
 		[SerializeField] private TextMeshProUGUI _moneyText;
 		[SerializeField] private TextMeshProUGUI _livesText;
 		[SerializeField] private TextMeshProUGUI _waveCountText;
-		
-		private void Awake()
+
+		private void OnValidate()
 		{
 			if (_waveStartsObject == null) Debug.LogWarning("No waveStartsObject set for " + name);
 			if (_moneyText == null) Debug.LogWarning("No moneyText set for " + name);
 			if (_livesText == null) Debug.LogWarning("No livesText set for " + name);
 			if (_waveCountText == null) Debug.LogWarning("No waveCountText set for " + name);
 		}
-		
+
 		private void Start()
 		{
 			GameManager gameManager = GameManager.instance;

@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [Serializable]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
 	[SerializeField] private Tile _tileAsset;
@@ -28,15 +29,20 @@ public class Enemy : MonoBehaviour
 
 
 	private bool _hasDebuff;
-	
+
+	private void OnValidate()
+	{
+		if (_tileAsset == null) Debug.LogWarning("No tileAsset set for " + name);
+		if (_moneyPickUp == null) Debug.LogWarning("No moneyPickUp set for " + name);
+		if (_healthText == null) Debug.LogWarning("No healthText set for " + name);
+	}
+
 	private void Awake()
 	{
 		vitality = new Vitality(_maxHealth);
 		vitality.OnDeathEvent += OnDeath;
 
-		if (_healthText == null) Debug.LogWarning("No health text for " + name);
-		else vitality.OnHealthChangedEvent += pHealth => _healthText.text = pHealth + " hp";
-
+		vitality.OnHealthChangedEvent += pHealth => _healthText.text = pHealth + " hp";
 		vitality.health = _maxHealth;
 		
 		GetComponent<SpriteRenderer>().sprite = tile.sprite;

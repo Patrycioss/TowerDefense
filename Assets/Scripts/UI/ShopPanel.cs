@@ -1,3 +1,4 @@
+using System;
 using GameInformation;
 using TMPro;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace UI
         [SerializeField] private Image _image; 
         [SerializeField] private Button _button;
 
-        private void Awake()
+        private void OnValidate()
         {
             if (_costText == null) Debug.LogWarning("No cost set for " + name);
             if (_itemNameText == null) Debug.LogWarning("No itemName set for " + name);

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using GameInformation;
 using Time;
 using Unity.VisualScripting;
@@ -22,10 +23,15 @@ namespace UI
 		public void Open() => gameObject.SetActive(true);
 		public void Close() => gameObject.SetActive(false);
 
+		private void OnValidate()
+		{
+			if (_shopButton == null) Debug.LogWarning("No shopButton set for " + name);
+			if (_cantAffordMessage == null) Debug.LogWarning("No cantAffordMessage set for " + name);
+			if (_shopPanels.Count == 0) Debug.LogWarning("No shop panels set for " + name);
+		}
+
 		private void Start()
 		{
-			if (_shopPanels.Count == 0) Debug.LogWarning("No shop panels set for " + name);
-			
 			transform.AddComponent<SimpleTimer>();
 			UpdatePanels();
 		}

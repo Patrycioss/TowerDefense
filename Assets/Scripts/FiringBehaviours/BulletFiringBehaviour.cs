@@ -1,4 +1,5 @@
-﻿using FiringBehaviours.Bullet;
+﻿using System;
+using FiringBehaviours.Bullet;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -18,6 +19,11 @@ namespace FiringBehaviours
 		
 		private int _levelsAccumulated;
 
+		private void OnValidate()
+		{
+			if (_projectileTile == null) Debug.LogWarning("No projectileTile set for " + name);
+			if (_projectileSpawnPoint == null) Debug.LogWarning("No projectileSpawnPoint set for " + name);
+		}
 
 		protected override void OnLevelUp()
 		{

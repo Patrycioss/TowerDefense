@@ -36,6 +36,13 @@ public class Tower : MonoBehaviour
 	public CustomEvent onLevelUp { get; } = new();
 	public CustomEventT<int> onCostChange { get; } = new();
 
+	private void OnValidate()
+	{
+		if (_tile == null) Debug.LogWarning("No tile set for " + name);
+		if (_spriteRenderer == null) Debug.LogWarning("No sprite renderer set for " + name);
+		if (_gridPositionObject == null) Debug.LogWarning("No grid position object set for " + name);
+	}
+
 	public void Start()
 	{
 		_spriteRenderer.sprite = sprite;

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace UI
@@ -14,6 +15,14 @@ namespace UI
 		private Tower _tower;
 		private CantAfford _cantAfford;
 
+		private void OnValidate()
+		{
+			if (_levelText == null) Debug.LogWarning("No levelText set for " + name);
+			if (_costText == null) Debug.LogWarning("No costText set for " + name);
+			if (_upgrade == null) Debug.LogWarning("No upgrade set for " + name);
+			if (_cantAffordObject == null) Debug.LogWarning("No cantAffordObject set for " + name);
+		}
+
 		public void TryUpgrade()
 		{
 			if (!_tower.Upgrade()) 
@@ -25,6 +34,7 @@ namespace UI
 			_tower = transform.GetComponent<Tower>();
 			_tower.onLevelChange.AddListener(UpdateLevelText);
 			_tower.onCostChange.AddListener(UpdateCostText);
+			
 			_cantAfford = _cantAffordObject.GetComponent<CantAfford>();
 		}
 		

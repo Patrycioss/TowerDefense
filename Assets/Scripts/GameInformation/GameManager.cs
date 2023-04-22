@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Event;
 using ScriptableObjects;
 using States;
@@ -68,6 +69,18 @@ namespace GameInformation
 		public CustomEvent onPlayerDeath { get; private set; }
 		public CustomEventT<int> onWaveCountUpdated { get; private set; }
 
+		private void OnValidate()
+		{
+			if (_shop == null) Debug.LogWarning("No shop set for " + name);
+			if (_towerPlacer == null) Debug.LogWarning("No towerPlacer set for " + name);
+			if (_spawner == null) Debug.LogWarning("No spawner set for " + name);
+			if (_header == null) Debug.LogWarning("No header set for " + name);
+			if (_startMenu == null) Debug.LogWarning("No startMenu set for " + name);
+			if (_finishMenu == null) Debug.LogWarning("No finishMenu set for " + name);
+			if (_towers == null) Debug.LogWarning("No towers set for " + name);
+			if (_enemies == null) Debug.LogWarning("No enemies set for " + name);
+			if (_waves == null) Debug.LogWarning("No waves set for " + name);
+		}
 
 		private void Awake()
 		{

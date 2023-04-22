@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace FiringBehaviours
 { 
@@ -14,8 +15,12 @@ namespace FiringBehaviours
 		private GameObject _explosionEffect;
 
 		private int _levelsAccumulated = 0;
-		
-		
+
+		private void OnValidate()
+		{
+			if (_explosionEffectPrefab == null) Debug.LogWarning("No explosionEffectPrefab set for " + name);
+		}
+
 		protected override void OnLevelUp()
 		{
 			base.OnLevelUp();
