@@ -4,7 +4,7 @@ using GameInformation;
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
-public class EnemyBehaviour : MonoBehaviour
+public class EnemyPathFollower : MonoBehaviour
 {
 	private Enemy _enemy;
 	private Direction _direction;

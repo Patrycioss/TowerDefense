@@ -29,9 +29,6 @@ public class Sequence
 		return sequence;
 	}
 
-	
-
-
 	[Serializable]
 	private class EnemyCountPair
 	{
