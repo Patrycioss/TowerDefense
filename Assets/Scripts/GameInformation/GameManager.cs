@@ -75,13 +75,14 @@ namespace GameInformation
 			else Destroy(this);
 			
 			lives = _startLives;
+			onLivesUpdated = new CustomEventT<int>();
+			
 			wallet = new Wallet(_startMoney);
 
 			gameStateManager = new GameStateManager(_beginGameState);
 			timer = gameObject.AddComponent<SimpleTimer>();
 			
 			//Events
-			onLivesUpdated = new CustomEventT<int>();
 			onWaveCountUpdated = new CustomEventT<int>();
 			onPlayerDeath = new CustomEvent();
 			onPlayerDeath.AddListener(() =>
@@ -129,7 +130,8 @@ namespace GameInformation
 		public void ResetPlayerData()
 		{
 			lives = _startLives;
-			wallet = new Wallet(_startMoney);
+			onLivesUpdated.Raise(lives);
+			wallet.RemoveMoney(wallet.money);
 			waveCount = 0;
 			towerPlacer.RemoveAllTowers();
 		}

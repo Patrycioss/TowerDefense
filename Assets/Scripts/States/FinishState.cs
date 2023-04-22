@@ -1,4 +1,5 @@
 ﻿using GameInformation;
+using UnityEngine;
 
 namespace States
 {
@@ -8,6 +9,7 @@ namespace States
 		{
 			GameManager.instance.header.gameObject.SetActive(false);
 			GameManager.instance.finishMenu.gameObject.SetActive(true);
+			GameManager.instance.spawner.enemies.ForEach(Object.Destroy);
 		}
 
 		public void Update() {}
