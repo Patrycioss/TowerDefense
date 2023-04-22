@@ -125,6 +125,10 @@ PrefabInstance:
       value: Single
       objectReference: {fileID: 0}
     - target: {fileID: 3911616249923326238, guid: ce7631134afedd741a1d7d9b7bc72e59, type: 3}
+      propertyPath: _shopName
+      value: Single
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911616249923326238, guid: ce7631134afedd741a1d7d9b7bc72e59, type: 3}
       propertyPath: upgradeCosts.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -199,9 +203,12 @@ MonoBehaviour:
   _projectileTile: {fileID: 11400000, guid: fe6d89dbca0f4ea4ba0e41f8058b4944, type: 2}
   _projectileSpawnPoint: {fileID: 2914949457916310545}
   _bulletInformation:
+    _bulletType: 0
     _speed: 0.15
     _projectileDamage: 1
     _projectileHitRadius: 0.7
+  _levelsPerDamageUpgrade: 2
+  _speedIncreasePerLevel: 0.1
 --- !u!114 &5450218410771273816
 MonoBehaviour:
   m_ObjectHideFlags: 0

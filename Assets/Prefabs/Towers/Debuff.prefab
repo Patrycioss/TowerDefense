@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: _tile
       value: 
       objectReference: {fileID: 11400000, guid: efc6bd0212b80514a84f383729e35928, type: 2}
+    - target: {fileID: 1162825511670738612, guid: d9e31467c64f42c44ae8f207b206998b, type: 3}
+      propertyPath: _shopName
+      value: Debuff
+      objectReference: {fileID: 0}
     - target: {fileID: 4516077550021947131, guid: d9e31467c64f42c44ae8f207b206998b, type: 3}
       propertyPath: m_RootOrder
       value: 0
