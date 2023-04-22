@@ -1,0 +1,7 @@
+@startuml
+class "FinishMenu : MonoBehaviour" as FinishMenu {
+    - _restartButton : Button
+    - _survivedText : TextMeshProUGUI
+    - _victoryText :TextMeshProUGUI
+}
+@enduml

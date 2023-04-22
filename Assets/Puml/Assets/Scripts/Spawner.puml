@@ -1,0 +1,16 @@
+@startuml
+class "Spawner : MonoBehaviour" as Spawner {
+    - _path : GameObject
+    - _waves : List<Wave>
+    - _waveIndex : int 
+
+    + path <<get>>
+    + onEnemySpawned : CustomEventT<GameObject>
+    + spawning : bool
+
+    - SpawnEnemy(pEnemy:Enemy) : void
+    
+    + SpawnNextWave(pCallback:Action) : float
+    + RemoveEnemy(pEnemyObject:GameObject) : void
+}
+@enduml

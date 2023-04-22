@@ -1,0 +1,19 @@
+@startuml
+class BulletFiringBehaviour {
+    - _projectileTile : Tile
+    - _projectileSpawnPoint : GameObject
+    - _bulletInformation : BulletInformation
+    - _levelsPerDamageUpgrade : int
+    - _speedIncreasePerLevel : float
+    - _levelsAccumulated : int
+    
+    - CreateBulletObject() : GameObject
+    - GiveBulletBehaviour(pBullet:GameObject) : void
+    - GetUDirection(pTarget:GameObject) : Vector3
+    
+    # <<override>> OnLevelUp() : void
+    # <<override>> Fire() : void
+}
+FiringBehaviour <|-- BulletFiringBehaviour
+BulletFiringBehaviour - BulletInformation
+@enduml

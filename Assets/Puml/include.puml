@@ -1,0 +1,39 @@
+@startuml
+!include .\\Wave.puml
+!include .\\.\Assets\Scripts\Enemy.puml
+!include .\\.\Assets\Scripts\EnemyPathFollower.puml
+!include .\\.\Assets\Scripts\Sequence.puml
+!include .\\.\Assets\Scripts\Shop.puml
+!include .\\.\Assets\Scripts\Spawner.puml
+!include .\\.\Assets\Scripts\Tower.puml
+!include .\\.\Assets\Scripts\TowerPlacer.puml
+!include .\\.\Assets\Scripts\Vitality.puml
+
+!include .\\.\Assets\Scripts\Event\CustomEvent.puml
+!include .\\.\Assets\Scripts\Event\CustomEventT.puml
+
+!include .\\.\Assets\Scripts\FiringBehaviours\AOEFiringBehaviour.puml
+!include .\\.\Assets\Scripts\FiringBehaviours\BulletFiringBehaviour.puml
+!include .\\.\Assets\Scripts\FiringBehaviours\FiringBehaviour.puml
+!include .\\.\Assets\Scripts\GameInformation\GameManager.puml
+!include .\\.\Assets\Scripts\GameInformation\Wallet.puml
+!include .\\.\Assets\Scripts\States\FinishState.puml
+!include .\\.\Assets\Scripts\States\GameStateManager.puml
+!include .\\.\Assets\Scripts\States\IState.puml
+!include .\\.\Assets\Scripts\States\StartState.puml
+!include .\\.\Assets\Scripts\States\UpgradingState.puml
+!include .\\.\Assets\Scripts\States\WaveState.puml
+!include .\\.\Assets\Scripts\Time\CountDown.puml
+!include .\\.\Assets\Scripts\Time\SimpleTimer.puml
+!include .\\.\Assets\Scripts\UI\CantAfford.puml
+!include .\\.\Assets\Scripts\UI\FinishMenu.puml
+!include .\\.\Assets\Scripts\UI\Header.puml
+!include .\\.\Assets\Scripts\UI\MoneyPickUp.puml
+!include .\\.\Assets\Scripts\UI\ShopPanel.puml
+!include .\\.\Assets\Scripts\UI\ShopUI.puml
+!include .\\.\Assets\Scripts\UI\StartMenu.puml
+!include .\\.\Assets\Scripts\UI\TowerUI.puml
+!include .\\.\Assets\Scripts\FiringBehaviours\Bullet\BulletBehaviour.puml
+
+
+@enduml

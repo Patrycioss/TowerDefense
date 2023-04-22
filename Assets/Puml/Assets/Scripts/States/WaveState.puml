@@ -1,0 +1,6 @@
+@startuml
+class WaveState {
+}
+IState <|-- WaveState
+WaveState *-- GameManager
+@enduml

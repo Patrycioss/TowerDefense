@@ -1,0 +1,24 @@
+@startuml
+class "TowerPlacer : MonoBehaviour" as TowerPlacer {
+    - _towerContainer : GameObject
+    - _grassMap : Tilemap
+    - _towerMap : Tilemap
+    
+    - _tower : Tower
+    - _mainCamera : Camera
+    - _prevPos : Vector3Int
+    - _prevTower : GameObject
+    
+    + towerContainer : GameObject <<get>>
+    + holdsTower : bool <<get>>
+    
+    - ResetPreviousValues() : void
+    - PlaceTower(pPosition:Vector3Int) : void
+    - CreateTower(pPosition:Vector3Int) : GameObject
+    
+    + GiveTower(pTower:Tower) : void
+    + RemoveAllTowers() : void
+    + CancelPlacing() : void
+}
+TowerPlacer *-- Tower
+@enduml

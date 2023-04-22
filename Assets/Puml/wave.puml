@@ -1,0 +1,16 @@
+﻿@startuml
+class "Wave : ScriptableObject" as Wave {
+    - _sequenceQueue : Queue<Sequence>
+    - _enemyQueue : Queue<Enemy>
+    - _enemyReceiver : Action<Enemy>
+    - _waveFinishCallback : Action
+    - _timerObject : GameObject
+    - _timer : SimpleTimer
+    - _spawnInterval : float
+    
+    - NextSequence() : void
+    - NextEnemy() : void
+    
+    + StartWave(pEnemyReceiver:Action<Enemy>, pWaveFinishCallBack:Action) : void
+}
+@enduml

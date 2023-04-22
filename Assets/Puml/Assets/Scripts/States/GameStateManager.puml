@@ -1,0 +1,17 @@
+@startuml
+enum GameState {
+    Start,
+    Finish,
+    Wave,
+    Upgrading,
+}
+class GameStateManager {
+    + GameStateManager(pGameState:GameState)
+    + Update() : void
+    + FixedUpdate() : void
+    + SetState(pState:IState) : void
+    + SetState(pGameState:GameState) : void
+}
+GameStateManager - GameState
+GameStateManager --> IState
+@enduml

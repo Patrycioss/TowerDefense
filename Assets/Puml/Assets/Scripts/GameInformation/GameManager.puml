@@ -1,0 +1,54 @@
+@startuml
+class "GameManager : MonoBehaviour" as GameManager {
+    - _startMoney : int
+    - _startLives : int
+    - _beginGameState : GameState
+    - _upgradingPeriodDuration : int
+    - _shop : Shop
+    - _towerPlacer : TowerPlacer
+    - _spawner : Spawner
+    - _header : Header
+    - _startMenu : StartMenu
+    - _finishMenu : FinishMenu
+    - _towers : List<Tower>
+    - _enemies : List<GameObject>
+    - _waves : List<Wave>
+    
+    - instance : GameManager 
+    - numberOfWaves : int <<get>>
+    - upgradingPeriodDuration : int <<get>>
+    - shop : Shop <<get>>
+    - towerPlacer : TowerPlacer <<get>>
+    - spawner : Spawner <<get>>
+    - header : Header <<get>>
+    - startMenu : StartMenu <<get>>
+    - finishMenu : FinishMenu <<get>>
+    - towers : List<Tower> <<get>>
+    - enemies : List<GameObject> <<get>>
+    - waves : List<Wave> <<get>>
+    - wallet : Wallet <<get>>
+    - gameStateManager : GameStateManager <<get>>
+    - simpleTimer : SimpleTimer <<get>>
+    - lives : int <<get>>
+    - waveCount : int <<get>>
+    - onLivesUpdated : CustomEventT<int> <<get>>
+    - onPlayerDeath : CustomEvent <<get>>
+    - onWaveCountUpdated : CustomEventT<int> <<get>>
+    
+    + RemoveALife() : void
+    + RequestUpdates() : void
+    + AddWave() : void
+    + ResetPlayerData() : void
+}
+
+GameManager *-- GameState
+GameManager *-- Shop
+GameManager *-- TowerPlacer
+GameManager *-- Spawner
+GameManager *-- Header
+GameManager *-- StartMenu
+GameManager *-- FinishMenu
+GameManager *-- Wallet
+GameManager *-- GameStateManager
+GameManager *-- Wave
+@enduml

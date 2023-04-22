@@ -1,0 +1,12 @@
+@startuml
+class "CountDown : MonoBehaviour" as CountDown {
+    - _textMeshProUGUI : TextMeshProUGUI
+    - _number : int
+    - _duration : int
+    
+    + finishedEvent : CustomEvent <<get>>
+
+    - OneDown() : IEnumerator    
+    + StartCountDown(pDuration:int) : void
+}
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class BulletInformation <<struct>> {
+    + _bulletType : BulletType
+    + _speed : float
+    + _projectileDamage : int
+    + _projectileHitRadius : float
+}
+enum BulletType {
+    Normal,
+    Debuff,
+}
+class "BulletBehaviour : MonoBehaviour" as BulletBehaviour {
+    - _informed : bool
+    - _bulletInformation : BulletInformation
+    - _direction : Vector3
+    - Kill() : void
+    - FixedUpdate() : void
+}
+BulletInformation - BulletType
+BulletBehaviour *-- BulletInformation
+@enduml

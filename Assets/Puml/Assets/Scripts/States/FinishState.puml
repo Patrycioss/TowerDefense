@@ -1,0 +1,5 @@
+@startuml
+class FinishState {
+}
+IState <|-- FinishState
+@enduml

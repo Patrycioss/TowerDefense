@@ -1,0 +1,23 @@
+@startuml
+class "FiringBehaviour : MonoBehaviour" as FiringBehaviour {
+    - _fireDelay : float = 1.0f
+    - _rangeIncreasePerLevel : float = 0.2f
+    - _fireDelayDecreasePerLevel : float = 0.1f
+    
+    # _range : float
+    # simpleTimer : SimpleTimer
+    # tower : Tower
+    # enemiesInRange : List<GameObject> <<get>>
+    # onTimerComplete : CustomEvent <<get>>
+    - AddNewEnemiesInRange() : void
+    - EnemiesNotInRange() : List<GameObject>
+    - RemoveIncorrectEnemiesInRange(pEnemiesNotInRange:List<GameObject>) : void
+    - OnTimerEnd() : void
+        
+    # <<virtual>> OnLevelUp() : void
+    # <<virtual>> Fire() : void
+    # <<virtual>> CanFire() : bool
+}
+
+FiringBehaviour *- Tower
+@enduml

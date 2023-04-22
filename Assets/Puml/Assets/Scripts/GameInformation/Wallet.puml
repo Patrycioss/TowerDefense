@@ -1,0 +1,10 @@
+@startuml
+class Wallet {
+    + money : int <<get>>
+    + onMoneyChanged : CustomEventT<int> <<get>>
+    + Wallet(pStartMoney:int)
+    + AddMoney(pAmount:int) : void
+    + RemoveMoney(pAmount:int) : bool
+    + CanAfford(pAmount:int) : bool
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class "MoneyPickUp : MonoBehaviour" as MoneyPickUp {
+    - _pickupPrefab : GameObject
+    - _duration : float
+    - _simpleTimer : SimpleTimer
+    - _pickup : GameObject
+    
+    + Spawn(pAmount:int) : void
+}
+@enduml

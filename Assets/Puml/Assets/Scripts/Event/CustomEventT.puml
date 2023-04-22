@@ -1,0 +1,7 @@
+@startuml
+class "CustomEventT<T>" {
+    + AddListener(pListener:Action<T>) : void
+    + RemoveListener(pListener:Action<T>) : void
+    + Raise(pValue:T) : void
+}
+@enduml

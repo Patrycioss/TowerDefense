@@ -1,0 +1,4 @@
+@startuml
+class "StartMenu : MonoBehaviour" as StartMenu {
+}
+@enduml

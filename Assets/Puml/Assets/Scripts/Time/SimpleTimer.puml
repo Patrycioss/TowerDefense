@@ -1,0 +1,5 @@
+@startuml
+class "SimpleTimer : MonoBehaviour" as SimpleTimer {
+    + StartTimer(pDurationSeconds:float, pOnEnd:Action) : void
+}
+@enduml

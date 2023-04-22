@@ -10,8 +10,6 @@ namespace ScriptableObjects
 	[CreateAssetMenu(fileName = "Wave", menuName = "Wave/Wave", order = 0)]
 	public class Wave : ScriptableObject
 	{
-
-		
 		[SerializeField] private List<Sequence> _waveSequence = new();
 		
 		private Queue<Sequence> _sequenceQueue;

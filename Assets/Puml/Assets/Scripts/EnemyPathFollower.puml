@@ -1,0 +1,23 @@
+@startuml
+class "EnemyPathFollower : MonoBehaviour" as EnemyPathFollower {
+    - _enemy : Enemy
+    - _direction : Direction
+    - _target : Vector3
+    - _path : Queue<Vector3>
+    
+    - Start() : void
+    - SetDirection(pDirection:Direction) : void
+    - NextTarget() : void
+    - FixedUpdate() : void
+    - HasArrivedAtTarget() : bool
+}
+
+enum Direction {
+    Up
+    Down
+    Left
+    Right
+}
+EnemyPathFollower *-- Enemy
+EnemyPathFollower *- Direction
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class "ShopPanel : MonoBehaviour" as ShopPanel {
+    - _costText : TextMeshProUGUI
+    - _itemNameText : TextMeshProUGUI
+    - _image : Image
+    - _button : Button
+    
+    + Load(pTower:Tower) : void
+}
+@enduml

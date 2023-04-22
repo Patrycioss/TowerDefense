@@ -1,0 +1,15 @@
+@startuml
+class AOEFiringBehaviour {
+    - _aoeDamage : int
+    - _levelsPerDamageUpgrade : int
+    - _explosionEffectModifier : float
+    - _explosionEffectDuration : float
+    - _explosionEffectPrefab : GameObject
+    - _explosionEffect : GameObject
+    - _levelsAccumulated : int
+    # <<override>> OnLevelUp() : void
+    # <<override>> Start() : void
+    # <<override>> Fire() : void
+}
+FiringBehaviour <|-- AOEFiringBehaviour
+@enduml

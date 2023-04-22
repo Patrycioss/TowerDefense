@@ -1,0 +1,7 @@
+@startuml
+class "Header : MonoBehaviour" as Header {
+    - _moneyText : TextMeshProUGUI
+    - _livesText : TextMeshProUGUI
+    - _waveCountText : TextMeshProUGUI
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class "ShopUI : MonoBehaviour" as ShopUI {
+    - _shopButton : GameObject
+    - _cantAffordMessage : GameObject
+    - _shopPanels : List<ShopPanel>
+    - _towerButtons : List<Button>
+    - _cantAffordTimer : SimpleTimer
+    
+    + shopButton : GameObject
+
+    + Open() : void
+    + Close() : void
+    + UpdatePanels() : void
+    + ShowCantAffordMessage(pShow:bool) : void
+    + ShowCantAffordMessageFor(pDuration:int) : void
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class "Enemy : MonoBehaviour" as Enemy {
+    - _tileAsset : Tile
+    - _speed : float
+    - _worth : int
+    - _maxHealth : int
+    - _healthText : TextMeshProUGUI
+    - _moneyPickUp : MoneyPickUp
+
+    - _hasDebuff : bool
+
+    + tile : Tile <<get>>
+    + speed : float <<get>>
+    + worth : int <<get>>
+    + vitality : Vitality <<get>>
+
+    - OnDeath() : void
+
+    + ApplyDebuff() : void
+}
+Enemy *-- Vitality
+Enemy *-- MoneyPickUp
+@enduml

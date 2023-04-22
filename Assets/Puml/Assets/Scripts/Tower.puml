@@ -1,0 +1,28 @@
+@startuml
+class "Tower : MonoBehaviour" as Tower {
+    - _shopName : string
+    - _cost : int
+    - _spriteRenderer : SpriteRenderer
+    - _upgradeCosts : List<int>
+    - _gridPositionObject : GameObject
+    - _maxLevel : int
+    
+    + shopName : string <<get>>
+    + cost : int <<get>>
+    + maxLevel : int <<get>>
+    + level : int <<get>>
+    + tile : Tile <<get>>
+    + sprite : Sprite <<get>>
+    + gridPosition : Vector3 <<get>>
+    + upgradeCosts : List<int> <<get>>
+    
+    + onLevelChange<int> : CustomEventT<int>
+    + onCostChange<int> : CustomEventT<int>
+    + onLevelUp : CustomEvent
+    
+    + UpdateUI() : void
+    + SetLevel(pNewLevel:int) : void
+    + UpdateCost(pLevel:int) : void
+    + Upgrade() : bool
+}
+@enduml

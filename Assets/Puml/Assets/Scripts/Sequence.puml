@@ -1,0 +1,24 @@
+@startuml
+class Sequence {
+    - _duration : float
+    - _spawnInterval : float = 1
+    - _enemies : List<EnemyCountPair>
+    
+    + duration : float <<get>>
+    + spawnInterval : float <<get>>
+    
+    + GetEnemies() : List<Enemy>
+}
+
+class EnemyCountPair {
+    + _enemy : EnumToEnemy
+    + _count : int
+}
+enum EnumToEnemy {
+    Normal
+    Fast
+    Tank
+}
+Sequence *- EnemyCountPair
+EnemyCountPair *- EnumToEnemy
+@enduml

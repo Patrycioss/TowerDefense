@@ -1,0 +1,9 @@
+@startuml
+class "CantAfford : MonoBehaviour" as CantAfford {
+    - _timer : SimpleTimer
+    
+    + Show(pShow:bool) : void
+    + ShowFor(pDuration:float) : void
+}
+'CantAfford *- SimpleTimer
+@enduml

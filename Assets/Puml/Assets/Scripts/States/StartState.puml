@@ -1,0 +1,6 @@
+@startuml
+class StartState {
+}
+IState <|-- StartState
+StartState *-- GameManager
+@enduml

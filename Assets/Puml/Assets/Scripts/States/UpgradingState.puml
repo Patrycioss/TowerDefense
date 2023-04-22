@@ -1,0 +1,7 @@
+@startuml
+class UpgradingState {
+    - ShowUpgrade(pShow:bool) : void
+}
+IState <|-- UpgradingState
+UpgradingState *-- GameManager
+@enduml

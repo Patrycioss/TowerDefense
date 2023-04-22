@@ -1,0 +1,19 @@
+@startuml
+class "TowerUI : MonoBehaviour" as TowerUI {
+    - _levelText : TextMeshProUGUI
+    - _costText : TextMeshProUGUI
+    - _upgrade : GameObject
+    - _cantAffordObject : GameObject
+    - _tower : Tower
+    - _cantAfford : CantAfford
+    
+    - UpdateLevelText(pLevel:int) : void
+    - UpdateCostText(pCost:int) : void
+    
+    + TryUpgrade() : void
+    + ShowUpgrade(pShow:bool) : void
+}
+MonoBehaviour <|-- TowerUI
+TowerUI --> Tower
+TowerUI --> CantAfford
+@enduml

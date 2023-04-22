@@ -1,0 +1,9 @@
+@startuml
+class "Shop : MonoBehaviour" as Shop {
+    - _shopUI : ShopUI
+    
+    + shopUI : ShopUI <<get>>
+    + BuyTower(pTower:Tower) : void
+}
+Shop *- ShopUI
+@enduml

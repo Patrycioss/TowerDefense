@@ -1,0 +1,18 @@
+@startuml
+class Vitality {
+    - _health : int
+    - _maxHealth : int
+
+    + health : int <<get>> <<set>>
+    + maxHealth : int <<get>> <<set>>
+
+    +  <<event>> OnDeathEvent : OnDeath 
+    +  <<event>> OnHealthChangedEvent : OnHealthChanged 
+
+    + Vitality(pMaxHealth:int, pStartingHealth:int)
+    + Damage(pDamage:int) : void
+    + Heal(pAmount:int) : void
+    + Kill() : void
+    + WouldSurvive(pDamage:int) : bool
+}
+@enduml
