@@ -2,7 +2,7 @@
 /// <summary>
 /// Integer based vitality system for entities
 /// </summary>
-public sealed class Vitality
+public class Vitality
 {
 	public delegate void OnDeath();
 	public event OnDeath OnDeathEvent;
