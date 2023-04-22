@@ -4,7 +4,7 @@ using UnityEngine.Tilemaps;
 
 namespace FiringBehaviours
 {
-	public class SingleFiringBehaviour : FiringBehaviour
+	public class BulletFiringBehaviour : FiringBehaviour
 	{
 
 		[SerializeField] private Tile _projectileTile;
@@ -16,7 +16,7 @@ namespace FiringBehaviours
 		
 		private GameObject _target;
 		
-		private int _levelsAccumulated = 0;
+		private int _levelsAccumulated;
 
 
 		protected override void OnLevelUp()

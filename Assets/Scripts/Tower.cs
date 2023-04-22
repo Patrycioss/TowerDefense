@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Event;
 using GameInformation;
@@ -34,7 +35,6 @@ public class Tower : MonoBehaviour
 	public CustomEventT<int> onLevelChange { get; } = new();
 	public CustomEvent onLevelUp { get; } = new();
 	public CustomEventT<int> onCostChange { get; } = new();
-	public CustomEvent onDataAssigned { get; } = new();
 
 	public void Start()
 	{

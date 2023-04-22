@@ -20,14 +20,6 @@ namespace UI
 
 		public void Spawn(int pAmount)
 		{
-			if (Camera.main == null)
-			{
-				Debug.LogError("No main camera found in scene");
-				return;
-			}
-
-			// Vector3 pos = Camera.main.WorldToViewportPoint(transform.parent.position);
-			
 			_pickup = Instantiate(_pickupPrefab, transform.position, Quaternion.identity);
 
 			TextMeshProUGUI text = _pickup.GetComponentInChildren<TextMeshProUGUI>();
