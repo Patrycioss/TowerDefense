@@ -3,6 +3,7 @@ using GameInformation;
 using States;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI
@@ -35,7 +36,8 @@ namespace UI
 
 			_restartButton.onClick.AddListener(() =>
 			{
-				GameManager.instance.gameStateManager.SetState(GameState.Upgrading);
+				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+				// GameManager.instance.gameStateManager.SetState(GameState.Upgrading);
 			});
 		}
 	}

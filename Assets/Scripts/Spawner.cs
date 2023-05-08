@@ -46,6 +46,8 @@ public class Spawner : MonoBehaviour
             Debug.LogError("No waves set for " + name);
     }
 
+  
+
     /// <summary>
     /// Spawns the next wave
     /// </summary>

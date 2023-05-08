@@ -21,10 +21,15 @@ namespace ScriptableObjects
 		private GameObject _timerObject;
 		private SimpleTimer _timer;
 
+		private bool _cancelled = false;
+
 		public float GetDurationSeconds() => _waveSequence.Sum(pSequence => pSequence.duration);
 
 		public void StartWave(Action<Enemy> pEnemyReceiver, Action pWaveFinishCallback)
 		{
+			_cancelled = false;
+			GameManager.instance.onPlayerDeath.AddListener(Cancel);
+			
 			_timer = GameManager.instance.timer;
 
 			_enemyReceiver = pEnemyReceiver;
@@ -34,8 +39,16 @@ namespace ScriptableObjects
 			NextSequence();
 		}
 
+
+		private void Cancel()
+		{
+			_cancelled = true;
+			Destroy(_timerObject);
+		}
+
 		private void NextSequence()
 		{
+			if (_cancelled) return;
 			if (_sequenceQueue.Count != 0)
 			{
 				Sequence sequence = _sequenceQueue.Dequeue();
@@ -56,6 +69,7 @@ namespace ScriptableObjects
 		private float _spawnInterval;
 		private void NextEnemy()
 		{
+			if (_cancelled) return;
 			if (_enemyQueue.Count == 0) return;
 			_enemyReceiver(_enemyQueue.Dequeue());
 			_timer.StartTimer(_spawnInterval, NextEnemy);

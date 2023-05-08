@@ -91,6 +91,7 @@ namespace GameInformation
 			onLivesUpdated = new CustomEventT<int>();
 			
 			wallet = new Wallet(_startMoney);
+			_header.SendUpdate(wallet);
 
 			gameStateManager = new GameStateManager(_beginGameState);
 			timer = gameObject.AddComponent<SimpleTimer>();
@@ -145,6 +146,7 @@ namespace GameInformation
 			lives = _startLives;
 			onLivesUpdated.Raise(lives);
 			wallet.RemoveMoney(wallet.money);
+			wallet.AddMoney(_startMoney);
 			waveCount = 0;
 			towerPlacer.RemoveAllTowers();
 		}

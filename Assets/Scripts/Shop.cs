@@ -26,7 +26,14 @@ public class Shop : MonoBehaviour
 	public void BuyTower(Tower pTower)
 	{
 		GameManager gameManager = GameManager.instance;
-		gameManager.towerPlacer.GiveTower(pTower);
-		shopUI.Close();
+		if (GameManager.instance.wallet.CanAfford(pTower.cost))
+		{
+			gameManager.towerPlacer.GiveTower(pTower);
+			shopUI.Close();
+		}
+		else
+		{
+			_shopUI.ShowCantAffordMessageFor(2);
+		}
 	}
 }

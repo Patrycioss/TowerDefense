@@ -9,6 +9,7 @@ using UnityEngine.UI;
 namespace UI
 {
 	[RequireComponent(typeof(Shop))]
+	[RequireComponent(typeof(SimpleTimer))]
 	public class ShopUI : MonoBehaviour
 	{
 		[SerializeField] private GameObject _shopButton;
@@ -19,15 +20,30 @@ namespace UI
 		
 		private List<Button> _towerButtons;
 		private SimpleTimer _cantAffordTimer;
+		
+		public void Open()
+		{
+			_cantAffordMessage.SetActive(false);
+			gameObject.SetActive(true);
+		}
 
-		public void Open() => gameObject.SetActive(true);
-		public void Close() => gameObject.SetActive(false);
+		public void Close()
+		{
+			_cantAffordMessage.SetActive(false);
+			gameObject.SetActive(false);
+			
+		}
 
 		private void OnValidate()
 		{
 			if (_shopButton == null) Debug.LogWarning("No shopButton set for " + name);
 			if (_cantAffordMessage == null) Debug.LogWarning("No cantAffordMessage set for " + name);
 			if (_shopPanels.Count == 0) Debug.LogWarning("No shop panels set for " + name);
+		}
+
+		private void Awake()
+		{
+			_cantAffordTimer = GetComponent<SimpleTimer>();
 		}
 
 		private void Start()

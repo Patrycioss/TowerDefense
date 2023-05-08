@@ -15,11 +15,6 @@ namespace States
 		public void Update() {}
 		public void FixedUpdate() {}
 
-		public void Stop()
-		{
-			GameManager.instance.ResetPlayerData();
-			GameManager.instance.header.gameObject.SetActive(true);
-			GameManager.instance.finishMenu.gameObject.SetActive(false);
-		}
+		public void Stop() {}
 	}
 }

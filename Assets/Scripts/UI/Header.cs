@@ -23,6 +23,11 @@ namespace UI
 			if (_waveCountText == null) Debug.LogWarning("No waveCountText set for " + name);
 		}
 
+		public void SendUpdate(Wallet pWallet)
+		{
+			_moneyText.text = pWallet.money.ToString();
+		}
+
 		private void Start()
 		{
 			GameManager gameManager = GameManager.instance;
